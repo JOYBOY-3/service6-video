@@ -20,7 +20,7 @@ func main() {
 		},
 	}
 
-	traceIDFn := func(ctx context.content) string {
+	traceIDFn := func(ctx context.Context) string {
 		return "" //web.GetTraceID(ctx)
 	}
 
@@ -40,7 +40,7 @@ func run(ctx context.Context, log *logger.Logger) error {
 
 	log.Info(ctx, "startup", "GOMAXPROCS", runtime.GOMAXPROCS(0))
 
-	shutdown := make(chan os.Signal)
+	shutdown := make(chan os.Signal, 1)
 	signal.Notify(shutdown, syscall.SIGINT, syscall.SIGTERM)
 	sig := <-shutdown
 
