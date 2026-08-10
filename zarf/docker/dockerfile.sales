@@ -8,8 +8,8 @@ ARG BUILD_TAG
 COPY . /service
 
 # Build the service binary.
-WORKDIR /service/api/services/sales
-RUN go build -ldflags "-X main.build=${BUILD_REF}"
+WORKDIR /service/apis/services/sales
+RUN go build -ldflags "-X main.build=${BUILD_TAG}"
 
 
 # Run the Go Binary in Alpine.
@@ -18,7 +18,7 @@ ARG BUILD_DATE
 ARG BUILD_TAG
 RUN addgroup -g 1000 -S sales && \
     adduser -u 1000 -h /service -G sales -S sales
-COPY --from=build_sales --chown=sales:sales /service/api/services/sales/sales /service/sales
+COPY --from=build_sales --chown=sales:sales /service/apis/services/sales/sales /service/sales
 WORKDIR /service
 USER sales
 CMD ["./sales"]
