@@ -108,6 +108,14 @@ dev-describe-deployment:
 dev-describe-sales:
 	kubectl describe pod --namespace=$(NAMESPACE) -l app=$(SALES_APP)
 
+# ==============================================================================
+# Metrics and Tracing
+
+metrics:
+	expvarmon -ports="localhost:4020" -endpoint="/metrics" -vars="build,requests,goroutines,errors,panics,mem:memstats.HeapAlloc,mem:memstats.HeapSys,mem:memstats.Sys"
+
+statsviz:
+	$(OPEN_CMD) http://localhost:3010/debug/statsviz
 # ================================================================================
 # Modules support
 
