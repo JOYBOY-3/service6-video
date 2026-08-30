@@ -20,5 +20,5 @@ func Errors(ctx context.Context, log *logger.Logger, handler Handler) error {
 		return errs.GetError(err)
 	}
 
-	return errs.Newf(errs.Unknown, errs.Unknown.String())
+	return errs.Newf(errs.Unknown, "%s", errs.Unknown.String())
 }
