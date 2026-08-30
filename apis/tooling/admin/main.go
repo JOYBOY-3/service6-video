@@ -116,7 +116,7 @@ func GenToken() error {
 
 	input := map[string]any{
 		"Key":   b.String(),
-		"Token": str[1],
+		"Token": str,
 		"ISS":   "service project",
 	}
 

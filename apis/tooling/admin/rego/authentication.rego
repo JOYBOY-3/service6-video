@@ -1,4 +1,4 @@
-package arda.rego
+package ardan.rego
 
 import rego.v1
 
