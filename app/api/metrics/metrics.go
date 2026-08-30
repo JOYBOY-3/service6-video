@@ -29,7 +29,7 @@ type metrics struct {
 func init() {
 	m = metrics{
 		goroutines: expvar.NewInt("goroutines"),
-		requests:   expvar.NewInt("request"),
+		requests:   expvar.NewInt("requests"),
 		errors:     expvar.NewInt("errors"),
 		panics:     expvar.NewInt("panics"),
 	}
