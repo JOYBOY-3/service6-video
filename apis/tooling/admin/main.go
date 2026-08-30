@@ -87,7 +87,7 @@ func GenToken() error {
 
 	// Construct a PEM block for the public key.
 	publicBlock := pem.Block{
-		Type:  "PUBLIC kEY",
+		Type:  "PUBLIC KEY",
 		Bytes: asn1Bytes,
 	}
 
