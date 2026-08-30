@@ -18,7 +18,7 @@ import (
 	"github.com/open-policy-agent/opa/rego"
 )
 
-// go:embed rego/authentication.rego
+//go:embed rego/authentication.rego
 var opaAuthentication string
 
 func main() {
@@ -115,7 +115,7 @@ func GenToken() error {
 	}
 
 	input := map[string]any{
-		"key":   b.String(),
+		"Key":   b.String(),
 		"Token": str[1],
 		"ISS":   "service project",
 	}
