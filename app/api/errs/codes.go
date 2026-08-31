@@ -134,7 +134,7 @@ func (ec *ErrCode) UnmarshalText(data []byte) error {
 }
 
 // MarshallText implement the marshal interface for JSON conversion.
-func (ec ErrCode) MarshallText() ([]byte, error) {
+func (ec ErrCode) MarshalText() ([]byte, error) {
 	return []byte(ec.String()), nil
 }
 
