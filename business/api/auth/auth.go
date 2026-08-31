@@ -8,10 +8,10 @@ import (
 	"errors"
 	"fmt"
 	"strings"
-	"uuid"
 
 	"github.com/ardanlabs/service/foundation/logger"
 	"github.com/golang-jwt/jwt/v5"
+	"github.com/google/uuid"
 	"github.com/open-policy-agent/opa/rego"
 )
 
