@@ -13,7 +13,7 @@ import (
 // Authorization validates a JWT from the `Authorization` header.
 func Authorization(ctx context.Context, auth *auth.Auth, authorization string, handler Handler) error {
 	var err error
-	parts := strings.Split(authorization, "")
+	parts := strings.Split(authorization, " ")
 
 	switch parts[0] {
 	case "Bearer":
