@@ -6,14 +6,13 @@ import (
 
 	"github.com/ardanlabs/service/app/api/errs"
 	"github.com/ardanlabs/service/business/api/auth"
-	"github.com/ardanlabs/service/foundation/logger"
 )
 
 // ErrInvalidID represents a condition where the id is not a uuid.
 var ErrInvalidID = errors.New("ID is not in its proper form")
 
 // Authorize executes the specified role and does not extract any domain data
-func Authorize(ctx context.Context, log *logger.Logger, auth *auth.Auth, rule string, handler Handler) error {
+func Authorize(ctx context.Context, auth *auth.Auth, rule string, handler Handler) error {
 	userID, err := GetUserID(ctx)
 	if err != nil {
 		return errs.New(errs.Unauthenticated, err)

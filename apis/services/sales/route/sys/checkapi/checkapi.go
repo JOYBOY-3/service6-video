@@ -47,6 +47,7 @@ func testPanic(ctx context.Context, w http.ResponseWriter, r *http.Request) erro
 	if n := rand.Intn(100); n%2 == 0 {
 		panic("WE ARE PANICKING!!!")
 	}
+
 	status := struct {
 		Status string
 	}{
