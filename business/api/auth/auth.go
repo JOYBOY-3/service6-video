@@ -207,5 +207,5 @@ func (a *Auth) opaPolicyEvaluation(ctx context.Context, regoScript string, rule 
 // 	return fmt.Errorf("user disabled")
 // }
 
-// return nil
+// 	return nil
 // }
