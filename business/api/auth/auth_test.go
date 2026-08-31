@@ -63,7 +63,7 @@ func Test_Auth(t *testing.T) {
 	}
 
 	err = a.Authorize(context.Background(), parsedClaims, userID, auth.RuleUserOnly)
-	if err != nil {
+	if err == nil {
 		t.Error("Should NOT be able to authorize the RoleUser claim")
 	}
 
@@ -102,7 +102,7 @@ func Test_Auth(t *testing.T) {
 	}
 
 	err = a.Authorize(context.Background(), parsedClaims, userID, auth.RuleAdminOnly)
-	if err != nil {
+	if err == nil {
 		t.Error("Should NOT be able to authorize the RuleAdminOnly claim with RoleUser only")
 	}
 
@@ -141,7 +141,7 @@ func Test_Auth(t *testing.T) {
 	userID = uuid.MustParse("9e979baa-61c9-4b50-81f2-f216d53f5c15")
 
 	err = a.Authorize(context.Background(), parsedClaims, userID, auth.RuleAdminOrSubject)
-	if err != nil {
+	if err == nil {
 		t.Error("Should NOT be able to authorize the RuleAdminOrSubject claim with RoleUser only and different userID")
 	}
 
