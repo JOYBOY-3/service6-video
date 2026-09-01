@@ -36,7 +36,7 @@ spec:
 
         readinessProbe: # readiness probes mark the service available to accept traffic.
           httpGet:
-            path: /v1/readiness
+            path: /readiness
             port: 6000
           initialDelaySeconds: 5
           periodSeconds: 10
@@ -46,7 +46,7 @@ spec:
 
         livenessProbe: # liveness probes mark the service alive or dead (to be restarted).
           httpGet:
-            path: /v1/liveness
+            path: /liveness
             port: 6000
           initialDelaySeconds: 2
           periodSeconds: 5

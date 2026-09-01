@@ -50,7 +50,7 @@ token:
 	curl -il \
 	--user "admin@example.com:gophers" http://localhost:6000/v1/auth/token/54bb2165-71e1-41a6-af3e-7da4a0e1e2c1
 
-curl-auth:
+curl-auth2:
 	curl -il \
 	-H "Authorization: Bearer ${TOKEN}" "http://localhost:6000/authenticate"
 
@@ -145,6 +145,10 @@ dev-apply:
 
 dev-restart:
 	kubectl rollout restart deployment $(SALES_APP) --namespace=$(NAMESPACE)
+
+dev-restart-auth:
+	kubectl rollout restart deployment $(AUTH_APP) --namespace=$(NAMESPACE)
+
 
 dev-update: build dev-load dev-restart
 
