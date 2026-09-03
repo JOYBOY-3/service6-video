@@ -72,7 +72,7 @@ func (api *api) liveness(ctx context.Context, w http.ResponseWriter, r *http.Req
 		Status:     "up",
 		Build:      api.build,
 		Host:       host,
-		Name:       os.Getenv("KUBERNETES_NAMES"),
+		Name:       os.Getenv("KUBERNETES_NAME"),
 		PodIP:      os.Getenv("KUBERNETES_POD_IP"),
 		Node:       os.Getenv("KUBERNETES_NODE_NAME"),
 		Namespace:  os.Getenv("KUBERNETES_NAMESPACE"),
