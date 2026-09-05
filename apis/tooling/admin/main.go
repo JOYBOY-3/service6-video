@@ -30,10 +30,10 @@ func main() {
 // Migrate creates the schema in the database.
 func Migrate() error {
 	dbConfig := sqldb.Config{
-		User:         "psotgres",
-		Password:     "psotgres",
-		HostPort:     "default:database-service.sales-system.svc.cluster.local",
-		Name:         "psotgres",
+		User:         "postgres",
+		Password:     "postgres",
+		HostPort:     "database-service.sales-system.svc.cluster.local",
+		Name:         "postgres",
 		MaxIdleConns: 2,
 		MaxOpenConns: 0,
 		DisableTLS:   true,
