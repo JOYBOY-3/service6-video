@@ -287,11 +287,6 @@ github.com/xeipuuv/gojsonreference
 # github.com/yashtewari/glob-intersection v0.2.0
 ## explicit; go 1.17
 github.com/yashtewari/glob-intersection
-# go.opentelemetry.io/otel v1.44.0
-## explicit; go 1.25.0
-go.opentelemetry.io/otel/attribute
-go.opentelemetry.io/otel/attribute/internal
-go.opentelemetry.io/otel/attribute/internal/xxhash
 # go.yaml.in/yaml/v2 v2.4.4
 ## explicit; go 1.15
 go.yaml.in/yaml/v2
